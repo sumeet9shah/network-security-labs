@@ -76,7 +76,7 @@ nmap -sT 192.168.56.102
 
 Filter used:
 ```bash
-tcp.port == 80
+ip.addr == 192.168.56.102
 ```
 
 Observed packets:
