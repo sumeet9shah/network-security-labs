@@ -72,6 +72,9 @@ nmap -sT -p 80,443 192.168.56.0/24
 nmap -sT 192.168.56.102
 ```
 
+📸 Screenshot:
+![Nmap Scan Output](screenshots/nmap-sT-output.png)
+
 ### Wireshark Analysis
 
 Filter used:
