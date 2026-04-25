@@ -76,7 +76,7 @@ nmap -sT 192.168.56.102
 
 Filter used:
 ```bash
-ip.addr == 192.168.56.102
+tcp.port == 80
 ```
 
 Observed packets:
@@ -107,7 +107,7 @@ sudo nmap -sS 192.168.56.102
 
 **Filter used:**
 ```bash
-ip.addr == 192.168.56.102
+tcp.port == 80
 ```
 
 **Observed packets:**
