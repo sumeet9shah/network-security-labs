@@ -104,18 +104,24 @@ sudo nmap -sS 192.168.56.102
 
 ### Wireshark Analysis
 
+**Filter used:**
+```bash
+ip.addr == 192.168.56.102
+```
+
 **Observed packets:**
-1. SYN
-2. SYN-ACK
-3. RST
+1. SYN → Sent to target
+2. SYN-ACK → Response from target
+3. RST → Connection reset immediately
 
 **Conclusion:**
-- No ACK sent
-- Connection not completed (half-open)
-- Stealth scanning technique
+- No ACK is sent
+- TCP handshake is not completed
+- Connection remains half-open
+- This confirms stealth behavior of `-sS` scan
 
 📸 Screenshot:
-![SYN Scan](screenshots/sS-half-open.png)
+![SYN Scan](Screenshots/sS-half-open.png)
 
 ---
 
