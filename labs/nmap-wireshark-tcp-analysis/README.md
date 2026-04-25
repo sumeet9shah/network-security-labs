@@ -86,9 +86,10 @@ Observed packets:
 4. RST → Connection reset
 
 **Conclusion:**
-- Full TCP handshake observed
-- Connection established then reset by Nmap
-- Confirms behavior of `-sT` scan
+- Full TCP handshake observed  
+- Connection is established and then immediately reset by the scanner  
+- Confirms behavior of `-sT` scan  
+- This behavior indicates that the operating system completes the full TCP connection on behalf of Nmap.
 
 📸 Screenshot:
 ![TCP Handshake](Screenshots/sT-handshake.png)
