@@ -150,6 +150,11 @@ tcp.port == 80
 | Speed         | Slower           | Faster        | Efficiency     |
 
 ---
+## Challenges Faced
+
+- Initially captured traffic on the wrong interface (eth0 instead of eth1)
+- Missed packets due to incorrect filter (tcp.port vs ip.addr)
+---
 
 ## Key Takeaways
 
