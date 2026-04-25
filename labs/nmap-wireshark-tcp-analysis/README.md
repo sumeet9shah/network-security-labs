@@ -72,8 +72,11 @@ nmap -sT -p 80,443 192.168.56.0/24
 nmap -sT 192.168.56.102
 ```
 
-📸 Screenshot:
-![Nmap Scan Output](Screenshots/nmap-sT-output.png)
+**Nmap Output:**
+
+The scan reveals multiple open ports including FTP (21), SSH (22), and HTTP (80).
+
+![Nmap Scan Output](screenshots/nmap-sT-output.png)
 
 ### Wireshark Analysis
 
