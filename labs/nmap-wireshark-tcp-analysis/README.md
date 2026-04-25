@@ -73,7 +73,7 @@ nmap -sT 192.168.56.102
 ```
 
 📸 Screenshot:
-![Nmap Scan Output](screenshots/nmap-sT-output.png)
+![Nmap Scan Output](Screenshots/nmap-sT-output.png)
 
 ### Wireshark Analysis
 
@@ -105,6 +105,9 @@ Observed packets:
 ```bash
 sudo nmap -sS 192.168.56.102
 ```
+
+📸 Screenshot:
+![Nmap SYN Scan Output](Screenshots/nmap-sS-output.png)
 
 ### Wireshark Analysis
 
