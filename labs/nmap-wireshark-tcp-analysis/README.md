@@ -1,1 +1,140 @@
+# Nmap TCP Scan Analysis using Wireshark
 
+## Objective
+
+To analyze TCP connection behavior using Nmap scans (`-sT` and `-sS`) and observe packet-level differences in Wireshark.
+
+---
+
+## Lab Setup
+
+- **Attacker:** Kali Linux (192.168.56.101)
+- **Target:** 192.168.56.102
+- **Network:** VirtualBox Host-Only (192.168.56.0/24)
+
+### Tools
+- Nmap
+- Wireshark
+
+---
+
+## Initial Network Verification
+
+### Check IP Address
+
+```bash
+ip a
+```
+
+or
+
+```bash
+ifconfig
+```
+
+**Observation:**
+- Attacker IP: 192.168.56.101
+- Interface used: `eth1`
+
+---
+
+### Test Connectivity
+
+```bash
+ping 192.168.56.102
+```
+
+**Result:**
+- Successful replies received
+- Target is reachable
+
+> Note: Ping uses ICMP, not TCP, but confirms basic connectivity.
+
+---
+
+## Host Discovery
+
+**Command:**
+```bash
+nmap -sT -p 80,443 192.168.56.0/24
+```
+
+**Result:**
+- Active hosts discovered: 192.168.56.1, .100, .101, .102
+- Port 80 open on 192.168.56.102
+
+---
+
+## TCP Connect Scan (-sT)
+
+**Command:**
+```bash
+nmap -sT 192.168.56.102
+```
+
+### Wireshark Analysis
+
+**Observed packets:**
+1. SYN
+2. SYN-ACK
+3. ACK
+4. RST
+
+**Conclusion:**
+- Full TCP handshake completed
+- Connection established and then reset
+
+📸 Screenshot:
+![TCP Handshake](screenshots/sT-handshake.png)
+
+---
+
+## SYN Scan (-sS)
+
+**Command:**
+```bash
+sudo nmap -sS 192.168.56.102
+```
+
+### Wireshark Analysis
+
+**Observed packets:**
+1. SYN
+2. SYN-ACK
+3. RST
+
+**Conclusion:**
+- No ACK sent
+- Connection not completed (half-open)
+- Stealth scanning technique
+
+📸 Screenshot:
+![SYN Scan](screenshots/sS-half-open.png)
+
+---
+
+## Comparison: -sT vs -sS
+
+| Feature        | -sT (Connect Scan) | -sS (SYN Scan) | Why It Matters |
+|---------------|------------------|---------------|----------------|
+| Handshake     | Full             | Partial       | Detectability  |
+| Final Packet  | ACK              | RST           | Leaves fewer logs |
+| Detectability | High             | Lower         | IDS evasion    |
+| Speed         | Slower           | Faster        | Efficiency     |
+
+---
+
+## Key Takeaways
+
+- TCP 3-way handshake: SYN → SYN-ACK → ACK
+- Nmap `-sT` completes the handshake
+- Nmap `-sS` performs a half-open scan
+- Packet-level analysis reveals scan behavior
+
+---
+
+## Real-World Relevance
+
+SYN scans (`-sS`) are widely used in penetration testing because they do not complete the TCP handshake, making them less likely to be logged by target systems.
+
+However, modern intrusion detection systems (IDS) can still detect SYN scan patterns based on abnormal connection behavior.
