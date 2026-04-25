@@ -4,7 +4,7 @@ This repository contains hands-on labs focused on practical network security con
 
 ## Labs
 
-- 🔍 [Nmap TCP Scan Analysis using Wireshark](labs/nmap-wireshark-tcp-analysis/README.md)
+- 🔍 [Nmap TCP Scan Analysis using Wireshark](labs/01-nmap-wireshark-tcp-analysis/README.md)
 
 ## Skills Demonstrated
 
