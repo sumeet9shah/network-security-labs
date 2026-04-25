@@ -74,15 +74,21 @@ nmap -sT 192.168.56.102
 
 ### Wireshark Analysis
 
-**Observed packets:**
-1. SYN
-2. SYN-ACK
-3. ACK
-4. RST
+Filter used:
+```bash
+tcp.port == 80
+```
+
+Observed packets:
+1. SYN → Target
+2. SYN-ACK → Response from target
+3. ACK → Handshake completed
+4. RST → Connection reset
 
 **Conclusion:**
-- Full TCP handshake completed
-- Connection established and then reset
+- Full TCP handshake observed
+- Connection established then reset by Nmap
+- Confirms behavior of `-sT` scan
 
 📸 Screenshot:
 ![TCP Handshake](screenshots/sT-handshake.png)
