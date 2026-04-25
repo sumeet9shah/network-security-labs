@@ -109,7 +109,10 @@ Observed packets:
 sudo nmap -sS 192.168.56.102
 ```
 
-📸 Screenshot:
+**Nmap Output:**
+
+The scan reveals multiple open ports (e.g., FTP 21, SSH 22, HTTP 80) while using a half-open technique that does not complete the full TCP handshake.
+
 ![Nmap SYN Scan Output](Screenshots/nmap-sS-output.png)
 
 ### Wireshark Analysis
