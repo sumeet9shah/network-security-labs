@@ -91,7 +91,7 @@ Observed packets:
 - Confirms behavior of `-sT` scan
 
 📸 Screenshot:
-![TCP Handshake](Screenshots/sT-handshake.png)
+![TCP Handshake](screenshots/sT-handshake.png)
 
 ---
 
