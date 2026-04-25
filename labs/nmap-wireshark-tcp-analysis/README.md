@@ -128,10 +128,12 @@ tcp.port == 80
 3. RST → Connection reset immediately
 
 **Conclusion:**
-- No ACK is sent
-- TCP handshake is not completed
-- Connection remains half-open
-- This confirms stealth behavior of `-sS` scan
+
+- No ACK is sent  
+- TCP handshake is not completed  
+- Connection remains half-open  
+- This confirms stealth behavior of `-sS` scan  
+- From a defensive perspective, repeated half-open connections can indicate reconnaissance activity and may trigger alerts in intrusion detection systems.
 
 📸 Screenshot:
 ![SYN Scan](Screenshots/sS-half-open.png)
@@ -160,6 +162,8 @@ tcp.port == 80
 
 ## Real-World Relevance
 
-SYN scans (`-sS`) are widely used in penetration testing because they do not complete the TCP handshake, making them less likely to be logged by target systems.
+SYN scans (-sS) are widely used in penetration testing because they do not complete the TCP handshake, making them less likely to be logged by target systems.
 
 However, modern intrusion detection systems (IDS) can still detect SYN scan patterns based on abnormal connection behavior.
+
+This scan behavior can be correlated with detection patterns observed in the scan detection lab.
