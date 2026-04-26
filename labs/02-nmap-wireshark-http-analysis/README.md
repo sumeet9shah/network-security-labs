@@ -57,7 +57,7 @@ The client sends a request:
 ```bash
 GET / HTTP/1.1
 ```
-![HTTP Request Filter](Screenshots/http-request-filter.png)
+![HTTP Request Filter](Screenshots/http-get-request.png)
 
 #### Important Headers
 
@@ -75,7 +75,7 @@ The server responds with:
 ```bash
 HTTP/1.1 200 OK
 ```
-![HTTP Response Filter](Screenshots/http-response-filter.png)
+![HTTP Response Filter](Screenshots/http-success-response.png)
 #### Response Contains
 
 - HTML content  
