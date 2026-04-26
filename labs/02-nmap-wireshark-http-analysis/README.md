@@ -46,7 +46,7 @@ http://192.168.56.102
 ```bash
 http
 ```
-![HTTP Traffic Capture](Screenshots/http-traffic-capture.png)
+![HTTP Traffic Capture](Screenshots/http-traffic-capture-new.png)
 ---
 
 ## HTTP Request & Response Analysis
