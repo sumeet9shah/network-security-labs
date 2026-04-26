@@ -2,6 +2,10 @@
 
 ---
 
+## Scenario
+
+In this lab, I simulated an attacker on the same local network as a vulnerable web application (DVWA) to analyze how unencrypted HTTP traffic can expose sensitive data.
+
 ## Objective
 
 To capture and analyze HTTP traffic using Wireshark in order to understand how web communication works, identify sensitive data exposure, and reconstruct full sessions.
@@ -81,7 +85,7 @@ HTTP/1.1 200 OK
 - HTML content  
 - `Content-Type: text/html`  
 
-This confirms successful communication.
+This confirms the server is responding correctly and that no transport-level issues are present, allowing us to focus purely on application-layer analysis.
 
 ---
 
@@ -242,6 +246,12 @@ HTTP traffic analysis helps in:
 - Understanding attacker behavior  
 
 ---
+
+## Key Takeaways (Personal Insights)
+
+- I observed firsthand how easily credentials can be extracted from unencrypted traffic.
+- Even without exploiting the application, network-level access is sufficient for compromise.
+- Wireshark's TCP stream feature is extremely powerful for reconstructing entire sessions.
 
 ## Conclusion
 
