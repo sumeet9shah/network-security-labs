@@ -128,11 +128,6 @@ POST /dvwa/login.php HTTP/1.1
 ![Password Capture 1](Screenshots/http-password-capture-1.png)
 ![Password Capture 2](Screenshots/http-password-capture-2.png)
 
-### Captured Credentials
-
-- **Username:** `admin`  
-- **Password:** `password`  
-
 ### Analysis
 
 The captured HTTP request reveals that login credentials are included directly within the request payload.
