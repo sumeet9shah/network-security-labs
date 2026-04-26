@@ -46,6 +46,7 @@ http://192.168.56.102
 ```bash
 http
 ```
+![HTTP Traffic Capture](Screenshots/http-traffic-capture.png)
 ---
 
 ## HTTP Request & Response Analysis
@@ -56,6 +57,8 @@ The client sends a request:
 ```bash
 GET / HTTP/1.1
 ```
+![HTTP Request Filter](Screenshots/http-request-filter.png)
+
 #### Important Headers
 
 - `Host: 192.168.56.102`  
@@ -72,6 +75,7 @@ The server responds with:
 ```bash
 HTTP/1.1 200 OK
 ```
+![HTTP Response Filter](Screenshots/http-response-filter.png)
 #### Response Contains
 
 - HTML content  
@@ -87,6 +91,8 @@ Using:
 ```bash
 http.request
 ```
+![HTTP Request Filter](Screenshots/http-request-filter.png)
+
 ### Observed Requests
 
 - `/`  
@@ -117,6 +123,8 @@ A POST request was captured during DVWA login:
 ```bash
 POST /dvwa/login.php HTTP/1.1
 ```
+![Password Capture 1](Screenshots/http-password-capture-1.png)
+![Password Capture 2](Screenshots/http-password-capture-2.png)
 
 ### Captured Credentials
 
@@ -142,6 +150,7 @@ To reconstruct the session:
 ```bash
 Right-click → Follow → TCP Stream
 ```
+![Follow TCP Stream](Screenshots/http-follow-tcp-stream.png)
 
 ### Reconstructed Data Includes
 
