@@ -118,7 +118,7 @@ This reflects normal browser behavior when loading a webpage.
 
 ## Credential Exposure Analysis
 
-A POST request was captured during DVWA login:
+During the login process, a POST request was captured in Wireshark containing user credentials transmitted over HTTP.
 
 ```bash
 POST /dvwa/login.php HTTP/1.1
@@ -133,18 +133,43 @@ POST /dvwa/login.php HTTP/1.1
 - **Username:** `admin`  
 - **Password:** `password`  
 
-### Key Findings
+### Analysis
 
-- Credentials are transmitted in **plain text**  
-- HTTP does **not provide encryption**  
-- Data is visible in packet payload  
+The captured HTTP request reveals that login credentials are included directly within the request payload.
 
-### Security Risk
+**Extracted Data:**
 
-This demonstrates a **Man-in-the-Middle (MITM) vulnerability**, where an attacker can intercept sensitive data without compromising the server.
+- **Username:** admin  
+- **Password:** password  
+
+This confirms that sensitive information is transmitted in **plaintext**, making it visible to anyone monitoring the network.
+
+> This data was captured passively without interacting with the server—only by analyzing network traffic.
 
 ---
 
+### Attacker Perspective
+
+An attacker connected to the same network can:
+
+- Capture HTTP traffic using packet analysis tools  
+- Extract credentials from POST request payloads  
+- Gain unauthorized access to the application  
+- Hijack user sessions using exposed cookies  
+
+This type of attack requires **no exploitation of the web application**, only access to the network.
+
+---
+
+### Security Impact
+
+This vulnerability enables:
+
+- Credential theft  
+- Account takeover  
+- Session hijacking  
+
+It represents a classic **Man-in-the-Middle (MITM)** risk due to lack of encryption.
 ## TCP Stream Analysis
 
 To reconstruct the session:
