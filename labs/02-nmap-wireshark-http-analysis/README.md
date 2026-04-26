@@ -123,6 +123,8 @@ A POST request was captured during DVWA login:
 ```bash
 POST /dvwa/login.php HTTP/1.1
 ```
+![Password Login](Screenshots/http-password-loginpage.png)
+![Password Front](Screenshots/http-password-frontpage.png)
 ![Password Capture 1](Screenshots/http-password-capture-1.png)
 ![Password Capture 2](Screenshots/http-password-capture-2.png)
 
